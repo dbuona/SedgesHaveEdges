@@ -29,9 +29,9 @@ acrocystis<-c("pensylvanica","inops","lucorum","albicans","floridana",
               "turbinata","serpenticola","pedunculata","concinna","richardsonnii") ## combineing candestinae 
 
 acro<-filter(d2,specificEpithet %in% acrocystis)
-acro %>% group_by (specificEpithet) %>% count() %>% arrange(-n)
+goober_acro<-acro %>% group_by (specificEpithet) %>% count() %>% arrange(-n)
 
-careyanae<-c("plantaginea","careyana","platyphylla","laxiculmis","digitalis","austrocaroliniana",
+ careyanae<-c("plantaginea","careyana","platyphylla","laxiculmis","digitalis","austrocaroliniana",
              "cumberlandensis","abscondita")
 carey<-filter(d2,specificEpithet %in% careyanae)
 
@@ -50,6 +50,6 @@ write.csv(d2,"Input/carexInput.csv",row.names = FALSE)
 write.csv(acro,"Input/acrocystisInput.csv",row.names = FALSE)
 write.csv(carey,"Input/careyanaeInput.csv",row.names = FALSE)
 write.csv(laxi,"Input/laxifloraeInput.csv",row.names = FALSE)
-nrow(laxi)+nrow(acro)+nrow(carey)
+nrow(laxi)+nrow(acro)+nrow(carey)#20,364 is a a big number
 
 
